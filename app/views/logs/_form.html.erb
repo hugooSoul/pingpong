@@ -1,9 +1,21 @@
 <%= simple_form_for @log do |f| %>
 
-  <%= f.date_select :date %>
-  <%= f.input :oponent %>
-  <%= f.input :my_score %>
-  <%= f.input :their_score %>
-  <%= f.button :submit %>
+  <div class="form-group">
+    <%= f.date_select :date, class: "form-control", label: false %>
+  </div>
+
+  <div class="form-group">
+    <%= f.collection_select :oponent, User.all, :email, :email, {:prompt => 'Please choose your oponent'} %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :my_score, class: "form-control", label: false , placeholder: "My Score" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :their_score, class: "form-control", label: false , placeholder: "Their Score" %>
+  </div>
+
+  <%= f.button :submit, class: "btn btn-md btn-success" %>
 
 <% end %>
