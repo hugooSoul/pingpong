@@ -111,6 +111,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (12.3.0)
+    ranker (1.1.4)
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -168,6 +169,7 @@ DEPENDENCIES
   devise-bootstrap-views (~> 0.0.6)
   jquery-rails
   rails (= 4.2.3)
+  ranker
   sass-rails (~> 5.0)
   simple_form
   spring

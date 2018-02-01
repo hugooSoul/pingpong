@@ -11,16 +11,22 @@
   </thead>
   <tbody>
 
-    <% @users.each do |user| %>
+    <% @users.each do |u| %>
       <tr>
+        <td><%= u.id %></td>
+        <td><%= u.email %></td>
         <td>X</td>
-        <td><%= user.email %></td>
-        <td>X</td>
-        <td><%= user.logs.count %></td>
+        <td>
+          <% if u.logs.count > 0 %>
+            <%= u.logs.count %>
+          <% else %>
+            X
+          <% end %>
+        </td>
       </tr>
     <% end %>
 
   </tbody>
 </table>
 
-<%= image_tag('leaderboard.png') %>
+<!--<%= image_tag('leaderboard.png') %>-->

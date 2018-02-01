@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180201154220) do
+ActiveRecord::Schema.define(version: 20180201184006) do
 
   create_table "logs", force: :cascade do |t|
     t.integer  "user_id"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20180201154220) do
   end
 
   add_index "logs", ["user_id"], name: "index_logs_on_user_id"
+
+  create_table "ranks", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "score"
+  end
+
+  add_index "ranks", ["user_id"], name: "index_ranks_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

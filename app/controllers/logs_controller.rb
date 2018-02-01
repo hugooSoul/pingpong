@@ -14,6 +14,7 @@ class LogsController < ApplicationController
     @log = current_user.logs.new(log_params)
 
     if @log.save
+      Rank.set_values(current_user.id, @log.oponent, @log.my_score, @log.their_score)
       redirect_to @log
     else
       flash[:error] = @log.errors
