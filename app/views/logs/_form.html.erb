@@ -1,0 +1,9 @@
+<%= simple_form_for @log do |f| %>
+
+  <%= f.date_select :date %>
+  <%= f.input :oponent %>
+  <%= f.input :my_score %>
+  <%= f.input :their_score %>
+  <%= f.button :submit %>
+
+<% end %>

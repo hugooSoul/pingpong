@@ -1,0 +1,22 @@
+<h1 class='page-header'>Log Game</h1>
+
+<div class="alert alert-success" role="alert">Your Log game was successfully saved.</div>
+
+<ul>
+  <li>
+    <%= @log.date.strftime("%B %e, %Y")  %>
+  </li>
+  <li>
+    <%= @log.oponent %>
+  </li>
+  <li>
+    <%= @log.my_score %>
+  </li>
+  <li>
+    <%= @log.their_score %>
+  </li>
+</ul>
+
+<% if @log.my_score > @log.their_score %>
+  <h2>Congratulations, yo won the match!!!</h2>
+<% end %>
