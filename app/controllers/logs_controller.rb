@@ -7,11 +7,11 @@ class LogsController < ApplicationController
   end
 
   def new
-    @log = Log.new
+    @log = current_user.logs.build
   end
 
   def create
-    @log = current_user.logs.new(log_params)
+    @log = current_user.logs.build(log_params)
 
     if @log.save
       Rank.set_values(current_user.id, @log.oponent, @log.my_score, @log.their_score)
