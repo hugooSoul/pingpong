@@ -13,6 +13,11 @@ class Log < ActiveRecord::Base
 
   after_validation :difference
 
+
+  def get_email(user_id)
+    return User.where(id: user_id).first
+  end
+
   private
 
   def difference

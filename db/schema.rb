@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20180201154220) do
   create_table "logs", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "date",        null: false
-    t.string   "oponent",     null: false
+    t.integer  "oponent"
     t.integer  "my_score"
     t.integer  "their_score"
   end

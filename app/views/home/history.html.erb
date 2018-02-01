@@ -14,7 +14,7 @@
     <% @history.each do |log| %>
       <tr>
         <td><%= log.date.strftime("%B %e") %></td>
-        <td><%= log.oponent %></td>
+        <td><%= log.get_email(log.oponent).email %></td>
         <td><%= log.my_score %> - <%= log.their_score %></td>
         <td>
           <% if log.my_score > log.their_score %>

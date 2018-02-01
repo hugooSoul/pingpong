@@ -11,7 +11,14 @@
   </thead>
   <tbody>
 
-    
+    <% @users.each do |user| %>
+      <tr>
+        <td>X</td>
+        <td><%= user.email %></td>
+        <td>X</td>
+        <td><%= user.logs.count %></td>
+      </tr>
+    <% end %>
 
   </tbody>
 </table>
