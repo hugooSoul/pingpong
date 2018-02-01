@@ -4,10 +4,10 @@ class HomeController < ApplicationController
   end
 
   def history
-    @history = Log.all
+    @history = Log.where(user_id: current_user)
   end
 
   def log
   end
-  
+
 end
