@@ -11,12 +11,13 @@ class LogsController < ApplicationController
   end
 
   def create
-    @log = Log.new(log_params)
+    @log = current_user.logs.new(log_params)
 
     if @log.save
       redirect_to @log
     else
-      render 'new'
+      flash[:error] = @log.errors
+      render :action => 'new'
     end
   end
 

@@ -9,11 +9,11 @@
   </div>
 
   <div class="form-group">
-    <%= f.input :my_score, class: "form-control", label: false , placeholder: "My Score" %>
+    <%= f.number_field :my_score, class: "form-control", label: false , placeholder: "My Score", min: 1, max: 21 %>
   </div>
 
   <div class="form-group">
-    <%= f.input :their_score, class: "form-control", label: false , placeholder: "Their Score" %>
+    <%= f.number_field :their_score, class: "form-control", label: false , placeholder: "Their Score", min: 1, max: 21 %>
   </div>
 
   <%= f.button :submit, class: "btn btn-md btn-success" %>
